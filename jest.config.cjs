@@ -1,12 +1,25 @@
 module.exports = {
-	testEnvironment: "node",
+	//testEnvironment: "node",
 	// Performance optimazation
 	cacheDirectory:"./.cache",
 	maxWorkers:3,
+	 testTimeout: 20000,
+    	 testEnvironmentOptions: {
+      	 "jest-playwright": {
+       	 browsers: [ "chromium" ],
+    launchOptions: {
+        // executablePath: process.env.PLAYWRIGHT_CHROME_EXECUTABLE_PATH,
+	chromium: {
 
+            headless: true,
+    executablePath: "/home/x/.guix-profile/bin/chromium"
+	},
+    },
+      		  }
+	},
 	verbose:true,
 	errorOnDeprecated:true,
-
+	  preset: 'jest-playwright-preset',
 	bail:1,
 	watchPlugins: [
 	[
