@@ -2,7 +2,7 @@
     export let name: string;
 </script>
 
-<h1 class="text-3xl  text-center">
+<h1 class="text-3xl  text-center ">
     Welcome to SvelteKit {name}
 </h1>
 <p>
