@@ -36,6 +36,7 @@ module.exports = {
         "@typescript-eslint/explicit-function-return-type": 2,
         "jest-async/expect-return": 2,
         "no-undef": 2,
+        "import/no-extraneous-dependencies": ["error", { packageDir: "./" }],
 
         "functional/functional-parameters": [
             2,

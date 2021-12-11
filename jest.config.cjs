@@ -11,7 +11,7 @@ module.exports = {
                 // executablePath: process.env.PLAYWRIGHT_CHROME_EXECUTABLE_PATH,
                 chromium: {
                     headless: true,
-                    executablePath: "/home/x/.guix-profile/bin/chromium",
+                    // executablePath: "/home/x/.guix-profile/bin/chromium",
                 },
             },
         },
