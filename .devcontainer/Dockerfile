@@ -13,16 +13,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
   libxcb1 libx11-6 libxcomposite1 libxdamage1 libxext6 libxfixes3 libxrandr2 \
   libpango-1.0-0 libxkbcommon0 
 
-
-# [Optional] Uncomment if you want to install an additional version of node using nvm
-# ARG EXTRA_NODE_VERSION=10
-# RUN su node -c "source /usr/local/share/nvm/nvm.sh && nvm install ${EXTRA_NODE_VERSION}"
-
-# [Optional] Uncomment if you want to install more global node packages
-RUN su node -c "npm i -g npm-check-updates"
-
-RUN npm install -g npm
-
+# Starship Prompt
 RUN curl -s https://api.github.com/repos/starship/starship/releases/latest \
   | grep browser_download_url \
   | grep x86_64-unknown-linux-gnu \
@@ -34,3 +25,12 @@ RUN sudo mv starship /usr/local/bin/
 
 RUN echo 'eval "$(starship init bash)"' >> /home/node/.bashrc 
 RUN echo 'eval "$(starship init zsh)"' >> /home/node/.zshrc 
+
+# [Optional] Uncomment if you want to install an additional version of node using nvm
+# ARG EXTRA_NODE_VERSION=10
+# RUN su node -c "source /usr/local/share/nvm/nvm.sh && nvm install ${EXTRA_NODE_VERSION}"
+
+# [Optional] Uncomment if you want to install more global node packages
+RUN su node -c "npm i -g npm-check-updates snyk"
+
+RUN npm install -g npm
